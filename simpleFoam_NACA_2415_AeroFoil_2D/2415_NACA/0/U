@@ -1,0 +1,59 @@
+ /*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (27 0 0); //for angle of attack 0 dgree
+//internalField   uniform (26.934 1.883 0); //for angle attack at 4 dgree
+//internalField   uniform (26.737 3.757 0); //for angle attack at 8 dgree
+//internalField   uniform (26.409 5.613 0); //for angle attack at 12 dgree
+//internalField   uniform (26.409 7.572 0); //for angle attack at 16 dgree
+//internalField   uniform (26.409 9.612 0); //for angle of attack 20 dgree
+
+boundaryField
+{
+    inlet
+    {
+        type            freestreamVelocity;
+        freestreamValue $internalField;
+    }
+
+    outlet
+    {
+        type            freestreamVelocity;
+        freestreamValue $internalField;
+    }
+
+    walls
+    {
+        type            noSlip;
+    }
+
+    frontAndBackPlanes
+    {
+        type            empty;
+    }
+    aerofoil
+    {
+        type            noSlip;
+    }
+     wall-surface_body
+    {
+        type           noSlip;
+    }
+}
+
+// ************************************************************************* //

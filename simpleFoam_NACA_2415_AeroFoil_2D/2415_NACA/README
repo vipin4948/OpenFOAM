@@ -1,0 +1,16 @@
+*The aerofoil profile coordinates data  imported from online library(Airfoiltools.com)
+*The Ansys Design modular(academic version) is used to create geometry
+*The Ansys Fluent(Academic version) meshing is used as meshing tool
+
+
+#comment out the line in velocity(0) file of 0 diectory to change angle of attack.
+
+#TO convert fluent mesh to foam mesh use the command  fluentMeshToFoam naca2415.msh (this will generate polymesh mesh folder ).
+
+
+#To start simulation use ./Allrun (""The Allrun command already set  with fluent to foam mesh conversion so no need of  use fluentmeshtofoam at first"")
+
+
+#To view countors and plots use paraFoam or paraview 
+
+
