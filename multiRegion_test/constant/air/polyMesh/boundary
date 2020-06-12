@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/air/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+7
+(
+    leftwall
+    {
+        type            patch;
+        nFaces          160;
+        startFace       4264;
+    }
+    rightwall
+    {
+        type            patch;
+        nFaces          160;
+        startFace       4424;
+    }
+    frontface
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          80;
+        startFace       4584;
+    }
+    backface
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          80;
+        startFace       4664;
+    }
+    air_to_heater
+    {
+        type            mappedWall;
+        inGroups        List<word> 1(wall);
+        nFaces          52;
+        startFace       4744;
+        sampleMode      nearestPatchFace;
+        sampleRegion    heater;
+        samplePatch     heater_to_air;
+    }
+    air_to_topplate
+    {
+        type            mappedWall;
+        inGroups        List<word> 1(wall);
+        nFaces          200;
+        startFace       4796;
+        sampleMode      nearestPatchFace;
+        sampleRegion    topplate;
+        samplePatch     topplate_to_air;
+    }
+    air_to_bottomplate
+    {
+        type            mappedWall;
+        inGroups        List<word> 1(wall);
+        nFaces          196;
+        startFace       4996;
+        sampleMode      nearestPatchFace;
+        sampleRegion    bottomplate;
+        samplePatch     bottomplate_to_air;
+    }
+)
+
+// ************************************************************************* //

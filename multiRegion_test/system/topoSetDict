@@ -1,0 +1,142 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  dev                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+     
+    {
+        name    heaterCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box  (-0.01 -0.04 -0.01)(0.01 0.02 0.01); // box1 
+        }
+    }
+	 {
+        name    heater;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set heaterCellSet;
+        }
+    }
+	
+ //bottom plate
+    {
+        name    solidCellSetbottom;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (-0.05 -0.05  -0.1)(0.05 -0.04 0.1); 
+        }
+    } 
+	{
+        name    bottomplate;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set solidCellSetbottom;
+        }
+    }
+	
+	// top plate
+	{
+        name    solidCellSettop;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (-0.05 0.04  -0.1)(0.05 0.05 0.1); // box 2
+        }
+    } 
+	{
+        name    topplate;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set solidCellSettop;
+        }
+    }
+	
+	
+	
+	// air cell set 
+	 {
+        name    airCellSet;
+        type    cellSet;
+        action  new;
+        source  cellToCell;
+        sourceInfo
+        {
+            set heaterCellSet;
+        }
+    }
+    {
+        name    airCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set solidCellSettop;
+        }
+    }
+	{
+        name    airCellSet;
+        type    cellSet;
+        action  add;
+        source  cellToCell;
+        sourceInfo
+        {
+            set solidCellSetbottom;
+        }
+    }
+	
+	
+    {
+        name    airCellSet;
+        type    cellSet;
+        action  invert;
+    }
+    
+    {
+        name    air;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set airCellSet;
+        }
+    }
+
+
+);
+
+
+// ************************************************************************* //
