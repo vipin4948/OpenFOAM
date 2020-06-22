@@ -1,0 +1,107 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-3bcbaf946ae9
+Exec   : splitMeshRegions -cellZonesOnly -overwrite
+Date   : Jun 14 2020
+Time   : 14:10:12
+Host   : "vipin-workstation"
+PID    : 334
+I/O    : uncollated
+Case   : /home/vipin4948/openfoam_github/OpenFOAM/testcase_multiregion
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Creating single patch per inter-region interface.
+
+Using current cellZones to split mesh into regions. This requires all cells to be in one and only one cellZone.
+
+
+Number of regions:2
+
+Writing region per cell file (for manual decomposition) to "/home/vipin4948/openfoam_github/OpenFOAM/testcase_multiregion/constant/cellToRegion"
+
+Writing region per cell as volScalarField to "/home/vipin4948/openfoam_github/OpenFOAM/testcase_multiregion/0/cellToRegion"
+
+Region	Cells
+------	-----
+0	36000
+1	54000
+
+Region	Zone	Name
+------	----	----
+0	0	heater
+1	1	water
+
+Sizes of interfaces between regions:
+
+Interface	Region	Region	Faces
+---------	------	------	-----
+0		0	1	6000
+
+Reading geometric fields
+
+Reading volScalarField cellToRegion
+Reading volScalarField p
+Reading volScalarField T
+Reading volScalarField p_rgh
+Reading volVectorField U
+
+
+Adding patches
+
+
+Adding patches
+
+For interface between region heater and water added patches
+    6	heater_to_water
+    7	water_to_heater
+
+Region 0
+-------- 
+Creating mesh for region 0 heater
+Testing:"/home/vipin4948/openfoam_github/OpenFOAM/testcase_multiregion/system/heater/fvSchemes"
+Mapping fields
+Mapping field p_rgh
+Mapping field cellToRegion
+Mapping field p
+Mapping field T
+Mapping field U
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region0 points back to base mesh.
+Writing map faceRegionAddressing from region0 faces back to base mesh.
+Writing map cellRegionAddressing from region0 cells back to base mesh.
+Writing map boundaryRegionAddressing from region0 boundary back to base mesh.
+
+Region 1
+-------- 
+Creating mesh for region 1 water
+Testing:"/home/vipin4948/openfoam_github/OpenFOAM/testcase_multiregion/system/water/fvSchemes"
+Mapping fields
+Mapping field p_rgh
+Mapping field cellToRegion
+Mapping field p
+Mapping field T
+Mapping field U
+Deleting empty patches
+Writing new mesh
+Writing addressing to base mesh
+Writing map pointRegionAddressing from region1 points back to base mesh.
+Writing map faceRegionAddressing from region1 faces back to base mesh.
+Writing map cellRegionAddressing from region1 cells back to base mesh.
+Writing map boundaryRegionAddressing from region1 boundary back to base mesh.
+End
+

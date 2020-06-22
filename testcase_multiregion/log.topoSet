@@ -1,0 +1,50 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-3bcbaf946ae9
+Exec   : topoSet
+Date   : Jun 14 2020
+Time   : 14:10:11
+Host   : "vipin-workstation"
+PID    : 332
+I/O    : uncollated
+Case   : /home/vipin4948/openfoam_github/OpenFOAM/testcase_multiregion
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet heaterCellSet
+    Applying source boxToCell
+    Adding cells with center within boxes 1((-0.25 -0.05 -0.05) (0.25 -0.03 0.05))
+    cellSet heaterCellSet now size 18000
+Read set cellSet heaterCellSet with size 18000
+    Applying source boxToCell
+    Adding cells with center within boxes 1((-0.25 0.03 -0.05) (0.25 0.05 0.05))
+    cellSet heaterCellSet now size 36000
+Created cellZoneSet heater
+    Applying source setToCellZone
+    Adding all cells from cellSet heaterCellSet ...
+    cellZoneSet heater now size 36000
+Read set cellSet heaterCellSet with size 36000
+    Inverting cellSet
+    cellSet heaterCellSet now size 54000
+Created cellZoneSet water
+    Applying source setToCellZone
+    Adding all cells from cellSet heaterCellSet ...
+    cellZoneSet water now size 54000
+End
+

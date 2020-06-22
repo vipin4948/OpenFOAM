@@ -1,0 +1,74 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-3bcbaf946ae9
+Exec   : blockMesh
+Date   : Jun 14 2020
+Time   : 14:10:11
+Host   : "vipin-workstation"
+PID    : 331
+I/O    : uncollated
+Case   : /home/vipin4948/openfoam_github/OpenFOAM/testcase_multiregion
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from
+    "/home/vipin4948/openfoam_github/OpenFOAM/testcase_multiregion/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0.005 .. 0.005
+        j : 0.0033333333
+        k : 0.0033333333
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-0.25 -0.05 -0.05) (0.25 0.05 0.05)
+  nPoints: 97061
+  nCells: 90000
+  nFaces: 276900
+  nInternalFaces: 263100
+----------------
+Patches
+----------------
+  patch 0 (start: 263100 size: 3000) name: top
+  patch 1 (start: 266100 size: 3000) name: bottom
+  patch 2 (start: 269100 size: 900) name: front
+  patch 3 (start: 270000 size: 900) name: back
+  patch 4 (start: 270900 size: 3000) name: left
+  patch 5 (start: 273900 size: 3000) name: right
+
+End
+

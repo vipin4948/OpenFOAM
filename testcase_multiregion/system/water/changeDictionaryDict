@@ -129,26 +129,26 @@ k
 
 p_rgh
 {
-    internalField   uniform 0;
+    internalField   uniform 1e5;
 
     boundaryField
     {
         front
         {
             type            zeroGradient;
-            value           uniform 0;
+            
         }
 
         back
         {
             type            fixedValue;
-            value           uniform 0;
+            value           uniform 1e5;
         }
 
         ".*"
         {
             type            fixedFluxPressure;
-            value           uniform 0;
+            value           uniform 1e5;
         }
     }
 }
@@ -158,7 +158,16 @@ p
     internalField   uniform 0;
 
     boundaryField
+
     {
+
+      front
+        {
+            type            zeroGradient;
+            
+        }
+
+
         ".*"
         {
             type            calculated;
