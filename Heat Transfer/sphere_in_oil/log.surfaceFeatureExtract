@@ -1,0 +1,85 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _f3950763fe-20191219 OPENFOAM=1912
+Arch   : "LSB;label=32;scalar=64"
+Exec   : surfaceFeatureExtract
+Date   : Jun 22 2020
+Time   : 17:57:25
+Host   : vipin-workstation
+PID    : 1819
+I/O    : uncollated
+Case   : /home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+
+Note: Feature line extraction only valid on closed manifold surfaces
+
+Reading surfaceFeatureExtractDict
+
+Surfaces     : sphere.stl
+Output       : sphere
+Load options : offset
+Write options: writeObj=yes writeVTK=off
+
+Statistics:
+Triangles    : 4450 in 1 region(s)
+Vertices     : 2227
+Bounding Box : (-0.0199905 -0.02 -0.02) (0.0199905 0.0199621 0.02)
+
+Constructing feature set from included angle 150
+Selecting edges based purely on geometric tests: no
+
+Initial Feature set:
+    points : 0
+    edges  : 2
+    of which
+        region edges   : 0
+        external edges : 0
+        internal edges : 2
+
+Final Feature set:
+    points : 4
+    of which
+        convex             : 0
+        concave            : 0
+        mixed              : 0
+        non-feature        : 4
+    edges  : 2
+    of which
+        external edges     : 0
+        internal edges     : 2
+        flat edges         : 0
+        open edges         : 0
+        multiply connected : 0
+
+Writing extendedFeatureEdgeMesh to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere.extendedFeatureEdgeMesh"
+
+Writing extendedEdgeMesh components to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere"
+Writing 0 convex feature points to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_convexFeaturePts.obj"
+Writing 0 concave feature points to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_concaveFeaturePts.obj"
+Writing 0 mixed feature points to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_mixedFeaturePts.obj"
+Writing 0 mixed feature point structure to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_mixedFeaturePtsStructure.obj"
+Writing 0 external edges to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_externalEdges.obj"
+Writing 2 internal edges to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_internalEdges.obj"
+Writing 0 flat edges to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_flatEdges.obj"
+Writing 0 open edges to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_openEdges.obj"
+Writing 0 multiple edges to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_multipleEdges.obj"
+Writing 0 region edges to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_regionEdges.obj"
+Writing 2 edge directions to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/extendedFeatureEdgeMesh/sphere_edgeDirections.obj"
+
+Writing featureEdgeMesh to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/triSurface/sphere.eMesh"
+ExecutionTime = 0.02 s  ClockTime = 0 s
+
+End
+

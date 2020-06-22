@@ -1,0 +1,65 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _f3950763fe-20191219 OPENFOAM=1912
+Arch   : "LSB;label=32;scalar=64"
+Exec   : splitMeshRegions -cellZones -overwrite
+Date   : Jun 22 2020
+Time   : 17:57:36
+Host   : vipin-workstation
+PID    : 1824
+I/O    : uncollated
+Case   : /home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Creating single patch per inter-region interface.
+
+Trying to match regions to existing cell zones.
+
+
+Number of regions:2
+
+Writing region per cell file (for manual decomposition) to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/constant/cellToRegion"
+
+Writing region per cell as volScalarField to "/home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/0/cellToRegion"
+
+Region	Cells
+------	-----
+0	60674
+1	12190
+
+Region	Zone	Name
+------	----	----
+0	1	oil
+1	0	sphere
+
+Sizes of interfaces between regions:
+
+Interface	Region	Region	Faces
+---------	------	------	-----
+0		0	1	2688
+
+Reading volScalarField: T
+
+--> FOAM FATAL IO ERROR: 
+Unexpected EOF while reading dictionary entry
+
+file: /home/vipin4948/openfoam_github/OpenFOAM/sphere_in_oil/0/T at line 32.
+
+    From function static bool Foam::entry::New(Foam::dictionary&, Foam::Istream&, Foam::entry::inputMode, int)
+    in file db/dictionary/entry/entryIO.C at line 169.
+
+FOAM exiting
+
