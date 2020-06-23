@@ -55,7 +55,7 @@ U
             type            fixedValue;
             value           uniform (0 0 0);
         }
-        
+       
     }
 }
 
@@ -70,10 +70,7 @@ T
             type            zeroGradient;
         }
 
-       // "procBoundary.*"
-      //  {
-       //     type            processor;
-       // }
+        
 
         "oil_to_.*"
         {
@@ -98,10 +95,7 @@ epsilon
             type            epsilonWallFunction;
             value           uniform 0.01;
         }
-       /* "procBoundary.*"
-        {
-            type            processor;
-        } */
+        
     }
 }
 
@@ -116,10 +110,7 @@ k
             type            kqRWallFunction;
             value           uniform 0.1;
         }
-      */  "procBoundary.*"
-        {
-            type            processor;
-        } */
+       
     }
 }
 
@@ -134,11 +125,8 @@ p_rgh
             type            fixedFluxPressure;
             value           uniform 1e5;
         }
-      /*  "procBoundary.*"
-        {
-            type            processor;
-        }
-    } */
+       
+    }
 }
 
 p
@@ -152,10 +140,7 @@ p
             type            calculated;
             value           uniform 1e5;
         }
-        "procBoundary.*"
-        {
-            type            processor;
-        }
+       
     }
 }
 

@@ -1,2 +1,5 @@
-error in calculating temperature and velocity in oil
-check thermophysical property of oil
+some problem with T field ..temperature changes are not visible in results
+heat transfer coefficient varies slowly ..so runnig for another 100 s
+- after runnging the settings upto 100s the simulation still fails to generate the temperature field
+-going through snappyhexamesh it found that the mesh rfignment region fails
+as next step trying to run simulation without refignment box

@@ -42,11 +42,11 @@ T
         }
     }
 
-   sphere_to_oil
-    {
-        type            calculated;
-        value           uniform 1e5;
-    } 
+  // sphere_to_oil
+   // {
+    //    type            calculated;
+    //    value           uniform 1e5;
+  //  } 
 }
 
 // ************************************************************************* //

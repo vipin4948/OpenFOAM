@@ -45,7 +45,7 @@ timePrecision   6;
 
 runTimeModifiable true;
 
-maxCo           0.3;
+maxCo           0.99;
 
 maxDi           10.0;
 
