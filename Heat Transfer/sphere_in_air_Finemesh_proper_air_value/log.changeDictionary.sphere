@@ -1,0 +1,57 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _f3950763fe-20191219 OPENFOAM=1912
+Arch   : "LSB;label=32;scalar=64"
+Exec   : changeDictionary -region sphere
+Date   : Jun 26 2020
+Time   : 17:51:02
+Host   : vipin-workstation
+PID    : 9306
+I/O    : uncollated
+Case   : /home/vipin4948/Openfoam_anlaysis/sphere_in_air_Finemesh_proper_air_value
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh sphere for time = 0
+
+Read dictionary changeDictionaryDict with replacements for dictionaries 2(boundary T)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 1(sphere_to_air)
+Extracted patch groups:
+    group wall with patches 1(sphere_to_air)
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 0()
+fieldDict:
+{
+    sphere_to_air
+    {
+        type            mappedWall;
+        inGroups        1 ( wall );
+        nFaces          1536;
+        startFace       8400;
+        sampleMode      nearestPatchFace;
+        sampleRegion    air;
+        samplePatch     air_to_sphere;
+    }
+}
+
+Writing modified boundary
+Replacing entries in dictionary T
+Loading dictionary T
+Loaded dictionary T with entries 3(dimensions internalField boundaryField)
+Merging entries from 2(internalField boundaryField)
+Writing modified fieldDict T
+
+End
+

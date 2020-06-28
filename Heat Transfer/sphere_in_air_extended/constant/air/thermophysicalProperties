@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      thermophysicalProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       polynomial;
+    thermo          hPolynomial;
+    equationOfState icoPolynomial;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+ mixture
+{
+    specie
+    {
+
+        nMoles 1;
+
+        molWeight 28.9;
+    }
+
+
+
+    equationOfState
+     {
+  
+      // rho= 5.8400000000E-06x2 - 6.9740000000E-03x + 2.7255800000E+00
+
+
+      rhoCoeffs<8> ( 2.72558 -6.974e-03 5.84e-06 0 0 0 0 0 );
+    
+     }
+
+ thermodynamics
+    {
+
+        Hf              0;
+        Sf              0;
+//cp = 4.5714285714E-04x2 - 2.4971428571E-01x + 1.0406571429E+03
+
+        CpCoeffs<8> ( 1040.6571429 -2.4971428571e-01 4.5714285714e-04 0 0 0 0 0);
+       
+    }
+
+
+    transport
+    {
+
+     //   mu = -2.7714285714E-11x2 + 6.4871428571E-08x + 1.4982857143E-06
+
+
+        muCoeffs<8> ( 1.4982857143e-06 6.4871428571e-08 -2.7714285714e-11 0 0 0 0 0 );
+
+//kappa = -2.5714285714E-08x2 + 9.2771428571E-05x + 7.5428571429E-04
+
+
+        kappaCoeffs<8> ( 7.5428571429e-04 9.2771428571e-05 -2.5714285714e-08 0 0 0 0 0 );
+    }
+}
+
+
+// ************************************************************************* //

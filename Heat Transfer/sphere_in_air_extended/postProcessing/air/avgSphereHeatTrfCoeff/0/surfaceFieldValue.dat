@@ -1,0 +1,9 @@
+# Region type : patch air_to_sphere
+# Faces       : 10824
+# Area        : 2.829884e-03
+# Scale factor: 1.000000e+00
+# Time        	areaAverage(heatTransferCoeff(T))	areaAverage(T)
+0.2           	-1.799378e+01	4.998439e+02
+0.4           	-1.751206e+01	4.997887e+02
+0.6           	-1.533596e+01	4.997367e+02
+0.8           	-1.356283e+01	4.996924e+02

@@ -1,0 +1,17 @@
+# Wavefront OBJ file written 2020-06-26T17:49:33
+o sphere_OpenFoam_edgeMesh
+
+# points : 4
+# lines  : 2
+
+# <points count="4">
+v 0.00188 -4.60467e-19 -0.0148817
+v 9.18485e-19 -2.24964e-34 -0.015
+v 9.18485e-19 -2.24964e-34 0.015
+v 0.00188 -4.60467e-19 0.0148817
+# </points>
+
+# <edges count="2">
+l 1 2
+l 3 4
+# </edges>
